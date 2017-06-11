@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lightbox</title>
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Lighbox Library CSS -->
+    <link href="lib/featherlight.min.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+</head>
+<body class="my-app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Lightbox Progress Bar Demo</h2>
+                <button id="reset" type="button" class="btn btn-primary">Reset</button>
+                <div class="lightbox-container">
+                    <div id="mylightbox">
+                        <h2>Progress</h2>
+                        <div class="content" id="loader1">
+                            <div class="progress">
+                                <div class="progress-bar"  id="myBar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="progress-percent">Progress <span class="count"></span>%</div>
+                            <div class="completed hide">This task is 100% Completed <img src="images/checkmark.png"/> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JQuery -->
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    
+    <!-- Lighbox Library script-->
+    <script src="lib/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+    
+    <!-- Custom Script -->
+    <script src="js/Loader.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>

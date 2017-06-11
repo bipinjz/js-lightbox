@@ -1,0 +1,76 @@
+
+/* Global Variables */
+@import '_variables.scss';
+
+
+/*=============================================
+=            Global            =
+=============================================*/
+.hide{ display:none;}
+
+
+
+/*=============================================
+=            Lightbox CSS            =
+=============================================*/
+
+.my-app {
+  .lightbox-container{
+    display:none;
+  }
+  .featherlight {
+    .featherlight-content {
+      padding: 0px;
+      border-bottom:0px;       
+    }
+
+    h2{
+      background:$dark;
+      font-size:16px;
+      padding:10px;
+      color:$head-txt;
+    }
+    .featherlight-close-icon{
+      margin: 5px 5px 0 0;
+      border-radius: 50%;
+      color:$head-txt;
+    }
+
+    .content{
+      padding:20px;
+      min-width: 300px;
+
+      
+      /*----------  Progress Bar  ----------*/
+      
+      .progress{
+        border:1px solid $color-border;
+        background:$color-w;
+        border-radius: 0px;
+        width:70%;
+        margin:0 auto;
+      }
+      .progress-percent, .completed{
+        text-align: center;
+        font-size:16px;
+        margin-top:15px;
+        color:$dark;
+      }
+      .completed{
+        img{
+          height:20px;
+        }
+      }
+      .progress-bar{
+        background:url('../images/gradient_blue.png') repeat-x;
+        &.complete{
+            background-color:$color-g;
+            background:url('../images/gradient_green.png') repeat-x;
+        }
+      }
+    }
+  } 
+} 
+
+/*=====  End of Lightbox CSS  ======*/
+
