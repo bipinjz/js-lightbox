@@ -3,7 +3,7 @@
  * New Loader Object
  */
 var newLoader = new Loader("loader1");
-
+newLoader.resetId = "reset";
 
 /**
  * Call Initilize
@@ -23,6 +23,7 @@ function init(){
 
     $.featherlight($('#mylightbox'));
     $.featherlight.defaults.closeOnClick = false;
+    
 }
 
 /**

@@ -5,6 +5,7 @@
 
 function Loader(id){
     this.id = id;
+    this.resetId = "";
 }
 
 /*
@@ -18,18 +19,23 @@ Loader.prototype.startProgress = function(start, finish, duration){
     var duration = duration;
     var finish = finish;
 
+    if(this.resetId){
+        document.getElementById(this.resetId).setAttribute("disabled","disabled");
+    }
+
     var id = setInterval(callback, duration);
    
     function callback(){
-        
         if(width == finish){
             clearInterval(id);
             newLoader.showSuccess();
         }else{
             width++; 
-            newLoader.changePercent(width);
+            newLoader.changePercent(width, id);
         }            
     }
+
+
 }
 
 /*
@@ -45,10 +51,17 @@ Loader.prototype.showSuccess = function(){
 /*
  * Update Percentage Change Value
  */
-Loader.prototype.changePercent = function(val){
+Loader.prototype.changePercent = function(val, intervalId){
    
     //Set Progress Bar Value
     var progressBar = document.querySelector(".featherlight #"+ this.id + " .progress-bar");
+    if(!progressBar){
+        clearInterval(intervalId);
+        if(this.resetId){
+            document.getElementById(this.resetId).removeAttribute("disabled");
+        }        
+        return;
+    }
     progressBar.style.width = val+'%';
     progressBar.setAttribute("aria-valuenow",val);
 
